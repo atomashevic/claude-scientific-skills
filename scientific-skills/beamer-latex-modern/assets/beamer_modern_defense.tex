@@ -1,0 +1,772 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+
+% =============================================================================
+% MODERN MINIMALIST BEAMER - THESIS DEFENSE (60+ minutes)
+% =============================================================================
+% Formal template for thesis/dissertation defenses.
+% Comprehensive coverage of all dissertation chapters.
+% Prepared for committee questions and extended discussion.
+% Target: 60-80 slides for 45-60 minute presentation + Q&A.
+% =============================================================================
+
+% --- Theme: Minimalistic defaults ---
+\usetheme{default}
+\usecolortheme{default}
+
+% --- Encoding and Fonts ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% --- Essential Packages ---
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+% --- Math Support ---
+\usepackage{amsmath,amssymb,amsthm}
+
+% --- Citations ---
+\usepackage[style=authoryear,maxcitenames=2,backend=biber]{biblatex}
+\addbibresource{references.bib}
+\renewcommand*{\bibfont}{\tiny}
+
+% --- Graphics Path ---
+\graphicspath{{figures/}}
+
+% --- Remove Navigation Symbols ---
+\setbeamertemplate{navigation symbols}{}
+
+% --- Colors: Plain Black on White ---
+\setbeamercolor{structure}{fg=black}
+\setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{frametitle}{fg=black,bg=white}
+\setbeamercolor{block title}{fg=black,bg=white}
+\setbeamercolor{block body}{fg=black,bg=white}
+\setbeamercolor{background canvas}{bg=white}
+
+% --- Remove Headline and Footline ---
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}{}
+
+% --- Comfortable Text Margins ---
+\setbeamersize{text margin left=8mm,text margin right=8mm}
+
+% --- Clean Frame Title with Horizontal Rule ---
+\setbeamertemplate{frametitle}{%
+  \vspace*{0.55em}%
+  {\Large\bfseries\insertframetitle\par}%
+  \vspace*{0.20em}\hrule\vspace*{0.55em}%
+}
+
+% --- Cleaner Bullet Points ---
+\setbeamertemplate{itemize item}{\textbullet}
+\setbeamertemplate{itemize subitem}{\textendash}
+\setbeamertemplate{enumerate item}{\arabic{enumi}.}
+
+% --- Custom Commands ---
+\newcommand{\FullSlideImage}[1]{%
+  \begin{frame}[plain]
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[anchor=center] at (current page.center) {%
+        \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{#1}%
+      };
+    \end{tikzpicture}
+  \end{frame}
+}
+
+\newcommand{\TightTableSetup}{%
+  \setlength{\tabcolsep}{4pt}%
+  \renewcommand{\arraystretch}{1.15}%
+}
+
+% --- Chapter/Section Title Slide ---
+\newcommand{\ChapterSlide}[2]{%
+  \begin{frame}[plain]
+    \vfill
+    \begin{center}
+      {\large Chapter #1}\\[0.5cm]
+      {\Huge\bfseries #2}
+    \end{center}
+    \vfill
+  \end{frame}
+}
+
+\newcommand{\SectionSlide}[1]{%
+  \begin{frame}[plain]
+    \vfill
+    \begin{center}
+      {\Huge\bfseries #1}
+    \end{center}
+    \vfill
+  \end{frame}
+}
+
+% =============================================================================
+% TITLE PAGE INFORMATION
+% =============================================================================
+
+\title[Thesis Defense]{%
+  Your Dissertation Title:\\
+  A Comprehensive Investigation of Topic
+}
+\subtitle{Doctoral Dissertation Defense}
+\author{Your Full Name}
+\institute{%
+  Department of Your Field\\
+  University Name\\
+  \vspace{0.5cm}
+  \textbf{Committee:}\\
+  Prof. Chair Name (Chair)\\
+  Prof. Member 1, Prof. Member 2, Prof. Member 3
+}
+\date{Date of Defense}
+
+% =============================================================================
+% DOCUMENT START
+% =============================================================================
+
+\begin{document}
+
+% --- Title Slide ---
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+% --- Acknowledgments (brief) ---
+\begin{frame}{Acknowledgments}
+\begin{columns}[T]
+  \begin{column}{0.48\textwidth}
+    \textbf{Academic Support}
+    \begin{itemize}
+      \item Advisor: Name
+      \item Committee members
+      \item Lab colleagues
+      \item Collaborators
+    \end{itemize}
+  \end{column}
+  \begin{column}{0.48\textwidth}
+    \textbf{Funding \& Resources}
+    \begin{itemize}
+      \item Funding agency 1
+      \item Funding agency 2
+      \item Computing resources
+    \end{itemize}
+    
+    \vspace{0.5em}
+    \textbf{Personal}
+    \begin{itemize}
+      \item Family and friends
+    \end{itemize}
+  \end{column}
+\end{columns}
+\end{frame}
+
+% --- Dissertation Overview ---
+\begin{frame}{Dissertation Overview}
+\begin{enumerate}
+  \item \textbf{Chapter 1}: Introduction and Background
+  \item \textbf{Chapter 2}: Literature Review
+  \item \textbf{Chapter 3}: Study 1 -- Title
+  \item \textbf{Chapter 4}: Study 2 -- Title
+  \item \textbf{Chapter 5}: Study 3 -- Title
+  \item \textbf{Chapter 6}: General Discussion
+  \item \textbf{Chapter 7}: Conclusions and Future Work
+\end{enumerate}
+
+\vspace{0.5em}
+\footnotesize
+Total: X pages, Y figures, Z tables
+\end{frame}
+
+% =============================================================================
+% CHAPTER 1: INTRODUCTION
+% =============================================================================
+
+\ChapterSlide{1}{Introduction}
+
+\begin{frame}{The Big Picture}
+\begin{itemize}
+  \item Broad context and importance of the research domain
+  \item Why this area matters for science/society
+  \item Current state of knowledge
+  \item Major challenges facing the field
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The Problem}
+\begin{enumerate}
+  \item \textbf{Challenge 1}: Description of specific problem
+  \item \textbf{Challenge 2}: Description of related problem
+  \item \textbf{Challenge 3}: Description of another aspect
+\end{enumerate}
+
+\vspace{0.55em}
+\begin{block}{Central Problem Statement}
+Despite advances in X, we still lack understanding of Y, which limits our ability to Z.
+\end{block}
+\end{frame}
+
+\begin{frame}{Dissertation Aims}
+\textbf{Overall Goal}: One sentence describing the dissertation's purpose
+
+\vspace{0.5em}
+\begin{enumerate}
+  \item \textbf{Aim 1}: First specific aim\\
+  \emph{Addressed in Chapter 3}
+  
+  \vspace{0.3em}
+  \item \textbf{Aim 2}: Second specific aim\\
+  \emph{Addressed in Chapter 4}
+  
+  \vspace{0.3em}
+  \item \textbf{Aim 3}: Third specific aim\\
+  \emph{Addressed in Chapter 5}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Dissertation Contributions}
+\begin{enumerate}
+  \item \textbf{Theoretical}: New framework/model for understanding X
+  \item \textbf{Methodological}: Novel approach to measuring/analyzing Y
+  \item \textbf{Empirical}: New evidence about Z across multiple contexts
+  \item \textbf{Practical}: Implications for applications in domain W
+\end{enumerate}
+\end{frame}
+
+% =============================================================================
+% CHAPTER 2: LITERATURE REVIEW
+% =============================================================================
+
+\ChapterSlide{2}{Literature Review}
+
+\begin{frame}{Theoretical Foundations}
+\begin{columns}[T]
+  \begin{column}{0.48\textwidth}
+    \textbf{Theory A}
+    \begin{itemize}
+      \item Key principles
+      \item Supporting evidence
+      \item Limitations
+    \end{itemize}
+  \end{column}
+  \begin{column}{0.48\textwidth}
+    \textbf{Theory B}
+    \begin{itemize}
+      \item Key principles
+      \item Supporting evidence
+      \item Limitations
+    \end{itemize}
+  \end{column}
+\end{columns}
+
+\vspace{0.55em}
+\textbf{Integration}: How these theories inform the dissertation
+\end{frame}
+
+\begin{frame}{Empirical Background}
+\TightTableSetup
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{2.5cm} X c c@{}}
+\toprule
+\textbf{Study} & \textbf{Key Finding} & \textbf{N} & \textbf{Effect} \\
+\midrule
+Author1 (Year) & Finding description & 150 & $d = 0.5$ \\
+Author2 (Year) & Finding description & 200 & $d = 0.7$ \\
+Author3 (Year) & Finding description & 300 & $d = 0.3$ \\
+Author4 (Year) & Finding description & 180 & $d = 0.6$ \\
+\bottomrule
+\end{tabularx}
+
+\vspace{0.5em}
+\textbf{Pattern}: Consistent finding across studies\\
+\textbf{Gap}: What remains unknown
+\end{frame}
+
+\begin{frame}{Knowledge Gaps}
+\begin{enumerate}
+  \item \textbf{Gap 1}: Theoretical gap\\
+  \emph{How this dissertation addresses it}
+  
+  \vspace{0.3em}
+  \item \textbf{Gap 2}: Methodological gap\\
+  \emph{How this dissertation addresses it}
+  
+  \vspace{0.3em}
+  \item \textbf{Gap 3}: Empirical gap\\
+  \emph{How this dissertation addresses it}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Research Questions and Hypotheses}
+\begin{enumerate}
+  \item \textbf{RQ1}: First research question
+  \begin{itemize}
+    \item H1a: Specific hypothesis
+    \item H1b: Specific hypothesis
+  \end{itemize}
+  
+  \vspace{0.3em}
+  \item \textbf{RQ2}: Second research question
+  \begin{itemize}
+    \item H2a: Specific hypothesis
+    \item H2b: Specific hypothesis
+  \end{itemize}
+  
+  \vspace{0.3em}
+  \item \textbf{RQ3}: Third research question
+  \begin{itemize}
+    \item H3: Specific hypothesis
+  \end{itemize}
+\end{enumerate}
+\end{frame}
+
+% =============================================================================
+% CHAPTER 3: STUDY 1
+% =============================================================================
+
+\ChapterSlide{3}{Study 1: Title}
+
+\begin{frame}{Study 1: Rationale}
+\begin{itemize}
+  \item Purpose of this study
+  \item How it addresses Aim 1
+  \item Connection to literature
+  \item Specific hypotheses tested
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Study 1: Methods}
+\begin{columns}[T]
+  \begin{column}{0.48\textwidth}
+    \textbf{Participants}
+    \begin{itemize}
+      \item Sample: N = X
+      \item Demographics
+      \item Recruitment
+      \item Inclusion/exclusion
+    \end{itemize}
+  \end{column}
+  \begin{column}{0.48\textwidth}
+    \textbf{Procedure}
+    \begin{itemize}
+      \item Design
+      \item Materials
+      \item Protocol
+      \item Measures
+    \end{itemize}
+  \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Study 1: Analysis}
+\begin{itemize}
+  \item \textbf{Primary analysis}: Statistical approach
+  \item \textbf{Secondary analyses}: Additional tests
+  \item \textbf{Software}: Tools used
+  \item \textbf{Corrections}: Multiple comparisons, etc.
+\end{itemize}
+
+\vspace{0.5em}
+\textbf{Model}:
+\begin{equation}
+  Y_i = \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + \epsilon_i
+\end{equation}
+\end{frame}
+
+\begin{frame}{Study 1: Results Overview}
+\TightTableSetup
+\small
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Hypothesis} & \textbf{Result} & \textbf{$p$-value} & \textbf{Supported?} \\
+\midrule
+H1a & Effect description & $< 0.001$ & Yes \\
+H1b & Effect description & $= 0.023$ & Yes \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{0.5em}
+\textbf{Key finding}: Summary of main result
+\end{frame}
+
+% --- Study 1 results figure ---
+% \FullSlideImage{study1_main_result.png}
+
+\begin{frame}{Study 1: Detailed Results}
+\begin{columns}[c]
+  \begin{column}{0.48\textwidth}
+    \centering
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{2.5cm}[Figure]\vspace{2.5cm}}}
+  \end{column}
+  \begin{column}{0.48\textwidth}
+    \textbf{Interpretation}
+    \begin{itemize}
+      \item Pattern observed
+      \item Statistical details
+      \item Effect size: $d = X$
+      \item Confidence intervals
+    \end{itemize}
+  \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Study 1: Summary}
+\begin{block}{Study 1 Conclusions}
+\begin{enumerate}
+  \item H1a supported: Description
+  \item H1b supported: Description
+  \item Contributes to Aim 1
+\end{enumerate}
+\end{block}
+
+\textbf{Limitations}: Specific to Study 1\\
+\textbf{Transition}: How this motivates Study 2
+\end{frame}
+
+% =============================================================================
+% CHAPTER 4: STUDY 2
+% =============================================================================
+
+\ChapterSlide{4}{Study 2: Title}
+
+\begin{frame}{Study 2: Rationale}
+\begin{itemize}
+  \item Building on Study 1 findings
+  \item Addressing Aim 2
+  \item New questions raised
+  \item Extended scope or methodology
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Study 2: Methods}
+\begin{columns}[T]
+  \begin{column}{0.48\textwidth}
+    \textbf{Design}
+    \begin{itemize}
+      \item Study type
+      \item Sample: N = X
+      \item Key differences from Study 1
+    \end{itemize}
+  \end{column}
+  \begin{column}{0.48\textwidth}
+    \textbf{Measures}
+    \begin{itemize}
+      \item Primary outcome
+      \item Secondary outcomes
+      \item New measures added
+    \end{itemize}
+  \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Study 2: Results}
+Main findings with supporting evidence.
+
+\vspace{0.5em}
+\TightTableSetup
+\small
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Comparison} & \textbf{Effect Size} & \textbf{$p$-value} \\
+\midrule
+Condition A vs B & $d = 0.75$ & $< 0.001$ \\
+Condition A vs C & $d = 0.42$ & $= 0.012$ \\
+Condition B vs C & $d = 0.33$ & $= 0.045$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{frame}
+
+% --- Study 2 results figure ---
+% \FullSlideImage{study2_main_result.png}
+
+\begin{frame}{Study 2: Summary}
+\begin{block}{Study 2 Conclusions}
+\begin{enumerate}
+  \item Replicates Study 1 findings
+  \item Extends to new context
+  \item Supports Aim 2
+\end{enumerate}
+\end{block}
+
+\textbf{Transition}: How this motivates Study 3
+\end{frame}
+
+% =============================================================================
+% CHAPTER 5: STUDY 3
+% =============================================================================
+
+\ChapterSlide{5}{Study 3: Title}
+
+\begin{frame}{Study 3: Rationale}
+\begin{itemize}
+  \item Culminating study of dissertation
+  \item Addresses remaining questions from Studies 1-2
+  \item Most comprehensive design
+  \item Tests integrated model
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Study 3: Methods}
+\begin{itemize}
+  \item \textbf{Design}: Describe comprehensive approach
+  \item \textbf{Sample}: N = X (largest sample)
+  \item \textbf{Measures}: All key variables
+  \item \textbf{Analysis}: Integrative analysis strategy
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Study 3: Results}
+\begin{columns}[c]
+  \begin{column}{0.55\textwidth}
+    \textbf{Key Findings}
+    \begin{enumerate}
+      \item Finding 1: Integrates Studies 1-2
+      \item Finding 2: Novel contribution
+      \item Finding 3: Theoretical confirmation
+    \end{enumerate}
+  \end{column}
+  \begin{column}{0.42\textwidth}
+    \centering
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{2.5cm}[Study 3 Figure]\vspace{2.5cm}}}
+  \end{column}
+\end{columns}
+\end{frame}
+
+% --- Study 3 results figure ---
+% \FullSlideImage{study3_main_result.png}
+
+\begin{frame}{Study 3: Summary}
+\begin{block}{Study 3 Conclusions}
+\begin{enumerate}
+  \item Comprehensive test of dissertation model
+  \item All major hypotheses supported
+  \item Robustness across conditions
+\end{enumerate}
+\end{block}
+\end{frame}
+
+% =============================================================================
+% CHAPTER 6: GENERAL DISCUSSION
+% =============================================================================
+
+\ChapterSlide{6}{General Discussion}
+
+\begin{frame}{Integration of Findings}
+\TightTableSetup
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}l X ccc@{}}
+\toprule
+\textbf{RQ} & \textbf{Finding} & \textbf{S1} & \textbf{S2} & \textbf{S3} \\
+\midrule
+RQ1 & Summary & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+RQ2 & Summary & --- & $\checkmark$ & $\checkmark$ \\
+RQ3 & Summary & --- & --- & $\checkmark$ \\
+\bottomrule
+\end{tabularx}
+
+\vspace{0.5em}
+\textbf{Overall Pattern}: Consistent findings across all three studies
+\end{frame}
+
+\begin{frame}{Theoretical Contributions}
+\begin{enumerate}
+  \item \textbf{Contribution 1}: Extension of Theory X\\
+  \emph{Evidence from Studies 1-3}
+  
+  \vspace{0.3em}
+  \item \textbf{Contribution 2}: Resolution of debate about Y\\
+  \emph{Evidence from Studies 2-3}
+  
+  \vspace{0.3em}
+  \item \textbf{Contribution 3}: New framework for understanding Z\\
+  \emph{Synthesized from all studies}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Methodological Contributions}
+\begin{itemize}
+  \item Novel measurement approach
+  \item Improved analytical techniques
+  \item New paradigm or procedure
+  \item Validation of existing methods
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Practical Implications}
+\begin{columns}[T]
+  \begin{column}{0.48\textwidth}
+    \textbf{For Field/Domain}
+    \begin{itemize}
+      \item Application 1
+      \item Application 2
+      \item Recommendations
+    \end{itemize}
+  \end{column}
+  \begin{column}{0.48\textwidth}
+    \textbf{For Policy/Practice}
+    \begin{itemize}
+      \item Implication 1
+      \item Implication 2
+      \item Guidelines
+    \end{itemize}
+  \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Limitations}
+\begin{enumerate}
+  \item \textbf{Limitation 1}: Description\\
+  \emph{Impact on conclusions; how addressed in dissertation}
+  
+  \vspace{0.3em}
+  \item \textbf{Limitation 2}: Description\\
+  \emph{Impact on generalizability; future work to address}
+  
+  \vspace{0.3em}
+  \item \textbf{Limitation 3}: Description\\
+  \emph{Alternative interpretations considered}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Future Directions}
+\textbf{Immediate Next Steps}
+\begin{itemize}
+  \item Replication studies
+  \item Extended populations
+  \item New contexts
+\end{itemize}
+
+\vspace{0.5em}
+\textbf{Long-term Research Agenda}
+\begin{itemize}
+  \item Theoretical development
+  \item Applied implementations
+  \item Interdisciplinary connections
+\end{itemize}
+\end{frame}
+
+% =============================================================================
+% CHAPTER 7: CONCLUSIONS
+% =============================================================================
+
+\ChapterSlide{7}{Conclusions}
+
+\begin{frame}{Dissertation Summary}
+\begin{enumerate}
+  \item \textbf{Aim 1}: Achieved through Study 1\\
+  Key finding and contribution
+  
+  \vspace{0.3em}
+  \item \textbf{Aim 2}: Achieved through Study 2\\
+  Key finding and contribution
+  
+  \vspace{0.3em}
+  \item \textbf{Aim 3}: Achieved through Study 3\\
+  Key finding and contribution
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Key Takeaways}
+\begin{block}{Main Conclusions}
+\begin{enumerate}
+  \item First major conclusion
+  \item Second major conclusion
+  \item Third major conclusion
+\end{enumerate}
+\end{block}
+
+\vspace{0.5em}
+\begin{block}{Significance}
+This dissertation advances our understanding of X by demonstrating Y, with implications for Z.
+\end{block}
+\end{frame}
+
+\begin{frame}[plain]
+\begin{center}
+\vspace{1.5cm}
+{\Large \textbf{Thank You}}
+
+\vspace{0.8cm}
+{\large Questions from the Committee}
+
+\vspace{1.5cm}
+\begin{tabular}{c}
+Your Full Name \\
+\texttt{email@university.edu} \\
+\url{https://yourwebsite.edu}
+\end{tabular}
+
+\vspace{0.8cm}
+\footnotesize
+Dissertation available at: [DOI or URL]
+\end{center}
+\end{frame}
+
+% =============================================================================
+% REFERENCES
+% =============================================================================
+
+\begin{frame}[allowframebreaks]{References}
+  \printbibliography
+\end{frame}
+
+% =============================================================================
+% BACKUP SLIDES (Extensive for defense)
+% =============================================================================
+
+\appendix
+
+\SectionSlide{Backup Slides}
+
+\begin{frame}{Backup: Alternative Analyses}
+Results using different analytical approaches.
+\end{frame}
+
+\begin{frame}{Backup: Sensitivity Analyses}
+Robustness checks and sensitivity tests.
+\end{frame}
+
+\begin{frame}{Backup: Subgroup Analyses}
+Results by demographic or other subgroups.
+\end{frame}
+
+\begin{frame}{Backup: Extended Methods -- Study 1}
+Detailed methodological information for Study 1.
+\end{frame}
+
+\begin{frame}{Backup: Extended Methods -- Study 2}
+Detailed methodological information for Study 2.
+\end{frame}
+
+\begin{frame}{Backup: Extended Methods -- Study 3}
+Detailed methodological information for Study 3.
+\end{frame}
+
+\begin{frame}{Backup: Power Analyses}
+Sample size justification and power calculations.
+\end{frame}
+
+\begin{frame}{Backup: Measurement Validation}
+Psychometric properties of measures used.
+\end{frame}
+
+\begin{frame}{Backup: Effect Size Comparisons}
+Comparison of effect sizes across studies and with literature.
+\end{frame}
+
+\begin{frame}{Backup: Alternative Interpretations}
+Discussion of alternative explanations for findings.
+\end{frame>
+
+\end{document}

@@ -1,0 +1,290 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+
+% =============================================================================
+% MODERN MINIMALIST BEAMER TEMPLATE
+% =============================================================================
+% A clean, black-on-white presentation style with sans-serif typography.
+% Designed for academic seminars, conference talks, and thesis defenses.
+%
+% Features:
+% - 16:9 aspect ratio (widescreen)
+% - Helvetica font family (sans-serif)
+% - No navigation symbols or decorations
+% - Full-slide image support via TikZ
+% - Tight table formatting for wide data
+% =============================================================================
+
+% --- Theme: Minimalistic defaults ---
+\usetheme{default}
+\usecolortheme{default}
+
+% --- Encoding and Fonts ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% --- Essential Packages ---
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+% --- Graphics Path ---
+\graphicspath{{figures/}}
+
+% --- Remove Navigation Symbols ---
+\setbeamertemplate{navigation symbols}{}
+
+% --- Colors: Plain Black on White ---
+\setbeamercolor{structure}{fg=black}
+\setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{frametitle}{fg=black,bg=white}
+\setbeamercolor{block title}{fg=black,bg=white}
+\setbeamercolor{block body}{fg=black,bg=white}
+\setbeamercolor{background canvas}{bg=white}
+
+% --- Remove Headline and Footline ---
+% Prevents overlay/clipping issues on image slides
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}{}
+
+% --- Comfortable Text Margins ---
+\setbeamersize{text margin left=8mm,text margin right=8mm}
+
+% --- Clean Frame Title with Horizontal Rule ---
+\setbeamertemplate{frametitle}{%
+  \vspace*{0.55em}%
+  {\Large\bfseries\insertframetitle\par}%
+  \vspace*{0.20em}\hrule\vspace*{0.55em}%
+}
+
+% --- Cleaner Bullet Points ---
+\setbeamertemplate{itemize item}{\textbullet}
+\setbeamertemplate{itemize subitem}{\textendash}
+\setbeamertemplate{enumerate item}{\arabic{enumi}.}
+
+% =============================================================================
+% CUSTOM COMMANDS
+% =============================================================================
+
+% Full-Slide Image Helper
+% Uses a page overlay to avoid Beamer text margins shifting/cropping images.
+% Usage: \FullSlideImage{filename}
+\newcommand{\FullSlideImage}[1]{%
+  \begin{frame}[plain]
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[anchor=center] at (current page.center) {%
+        \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{#1}%
+      };
+    \end{tikzpicture}
+  \end{frame}
+}
+
+% Tight Table Defaults
+% Keeps wide tables from spilling/cropping
+% Usage: \TightTableSetup before your table environment
+\newcommand{\TightTableSetup}{%
+  \setlength{\tabcolsep}{4pt}%
+  \renewcommand{\arraystretch}{1.15}%
+}
+
+% =============================================================================
+% TITLE PAGE INFORMATION
+% =============================================================================
+
+\title[Short Title]{Your Presentation Title}
+\subtitle{Subtitle or Event Context}
+\author{Your Name}
+\institute{Department or Laboratory\\Institution Name}
+\date{Event Name\\Month Year}
+
+% =============================================================================
+% DOCUMENT START
+% =============================================================================
+
+\begin{document}
+
+% --- Title Slide ---
+% Option 1: Use an image for full visual control
+% \FullSlideImage{title_slide.png}
+
+% Option 2: Use standard title page
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+% =============================================================================
+% CONTENT SLIDES
+% =============================================================================
+
+% --- Motivation ---
+\begin{frame}{Motivation}
+\begin{enumerate}
+  \item \textbf{Context}\\
+  Describe the broader context or problem domain.
+  \item \textbf{Challenge}\\
+  Identify the specific challenge or gap.
+  \item \textbf{Opportunity}\\
+  Explain why this is worth addressing now.
+  \item \textbf{Approach}\\
+  Preview your solution or contribution.
+\end{enumerate}
+\end{frame}
+
+% --- Background (as image) ---
+% \FullSlideImage{background_diagram.png}
+
+% --- Research Question ---
+\begin{frame}{Research Question}
+\begin{enumerate}
+  \item Prior work has shown X
+  \item However, Y remains unclear
+  \item This limits our understanding of Z
+\end{enumerate}
+
+\vspace{0.55em}
+\begin{block}{Guiding Question}
+Can we develop a method that achieves X while addressing Y?
+\end{block}
+\end{frame}
+
+% --- Methods ---
+\begin{frame}{Methods}
+\begin{columns}[T]
+  \begin{column}{0.48\textwidth}
+    \textbf{Data}
+    \begin{itemize}
+      \item Source and collection
+      \item Sample size and characteristics
+      \item Preprocessing steps
+    \end{itemize}
+  \end{column}
+  \begin{column}{0.48\textwidth}
+    \textbf{Analysis}
+    \begin{itemize}
+      \item Analytical approach
+      \item Key metrics
+      \item Validation strategy
+    \end{itemize}
+  \end{column}
+\end{columns}
+
+\vspace{0.8em}
+\footnotesize
+Implementation details: Software, versions, computational resources.
+\end{frame}
+
+% --- Pipeline Diagram (as image) ---
+% \FullSlideImage{pipeline_diagram.png}
+
+% --- Results Table ---
+\begin{frame}{Results Summary}
+\TightTableSetup
+\small
+\begin{center}
+\begin{tabularx}{0.9\textwidth}{@{}>{\raggedright\arraybackslash}X ccc@{}}
+\toprule
+\textbf{Method} & \textbf{Metric 1} & \textbf{Metric 2} & \textbf{Metric 3} \\
+\midrule
+Baseline A & 0.82 & 0.75 & 12.3s \\
+Baseline B & 0.85 & 0.78 & 15.1s \\
+\textbf{Proposed} & \textbf{0.94} & \textbf{0.91} & 14.7s \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{0.5em}
+\begin{itemize}
+  \item Key observation: Proposed method achieves X\% improvement
+  \item Secondary finding: Comparable computational cost
+\end{itemize}
+\end{frame}
+
+% --- Results Visualization (as image) ---
+% \FullSlideImage{results_chart.png}
+
+% --- Discussion ---
+\begin{frame}{Discussion}
+\textbf{Key Findings}
+\begin{enumerate}
+  \item Finding 1 and its significance
+  \item Finding 2 and its implications
+  \item Finding 3 and connection to prior work
+\end{enumerate}
+
+\vspace{0.55em}
+\textbf{Limitations}
+\begin{itemize}
+  \item Limitation 1 and potential mitigation
+  \item Limitation 2 and future work direction
+\end{itemize}
+\end{frame}
+
+% --- Conclusions ---
+\begin{frame}{Conclusions}
+\begin{enumerate}
+  \item \textbf{Main contribution}\\
+  Summary of primary finding or method.
+  \item \textbf{Key results}\\
+  Quantitative summary of outcomes.
+  \item \textbf{Future directions}\\
+  Next steps and open questions.
+\end{enumerate}
+
+\vspace{0.55em}
+\begin{block}{Take-home Message}
+One sentence capturing the core contribution of this work.
+\end{block}
+\end{frame}
+
+% --- Thank You / Questions ---
+\begin{frame}[plain]
+\begin{center}
+\vspace{2cm}
+{\Large \textbf{Thank You}}
+
+\vspace{1cm}
+{\large Questions?}
+
+\vspace{1.5cm}
+\begin{tabular}{c}
+Your Name \\
+\texttt{email@institution.edu} \\
+\url{https://yourwebsite.edu}
+\end{tabular}
+
+\vspace{1cm}
+\footnotesize
+Acknowledgments: Funding sources, collaborators, etc.
+\end{center}
+\end{frame}
+
+% =============================================================================
+% BACKUP SLIDES (Optional)
+% =============================================================================
+
+\appendix
+
+\begin{frame}{Backup: Additional Analysis}
+Additional details for anticipated questions.
+\begin{itemize}
+  \item Extended results
+  \item Sensitivity analyses
+  \item Methodological details
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Backup: Technical Details}
+\begin{itemize}
+  \item Implementation specifics
+  \item Parameter settings
+  \item Computational requirements
+\end{itemize}
+\end{frame}
+
+\end{document}

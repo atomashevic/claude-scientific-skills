@@ -1,0 +1,296 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+
+% =============================================================================
+% CORPORATE BEAMER TEMPLATE
+% =============================================================================
+% Professional template for business and corporate presentations.
+% Clean design with custom branding colors.
+% =============================================================================
+
+% --- Theme: Clean Professional ---
+\usetheme{Boadilla}
+\usecolortheme{orchid}
+
+% --- Encoding and Fonts ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% --- Essential Packages ---
+\usepackage{graphicx}
+\graphicspath{{./figures/}}
+
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning}
+
+% --- Corporate Colors (Customize These) ---
+\definecolor{corpblue}{RGB}{0,82,147}      % Primary
+\definecolor{corpgray}{RGB}{88,89,91}      % Secondary
+\definecolor{corplight}{RGB}{200,210,220}  % Accent
+
+% Apply colors
+\setbeamercolor{structure}{fg=corpblue}
+\setbeamercolor{title}{fg=corpblue}
+\setbeamercolor{frametitle}{fg=corpblue,bg=white}
+\setbeamercolor{block title}{fg=white,bg=corpblue}
+\setbeamercolor{block body}{fg=black,bg=corplight!30}
+\setbeamercolor{item}{fg=corpblue}
+
+% --- Clean Navigation ---
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,left]{author in head/foot}%
+      \usebeamerfont{author in head/foot}\hspace{3mm}\insertshortauthor
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+      \usebeamerfont{title in head/foot}\insertshorttitle
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+      \usebeamerfont{date in head/foot}\insertframenumber{} / \inserttotalframenumber\hspace{3mm}
+    \end{beamercolorbox}%
+  }%
+  \vskip0pt%
+}
+
+% =============================================================================
+% TITLE INFORMATION
+% =============================================================================
+
+\title[Project Update]{Q4 Project Status Update}
+\subtitle{Strategic Initiative Review}
+\author[Team]{Project Team}
+\institute{Your Company, Inc.}
+\date{Month Year}
+
+% Company logo
+% \logo{\includegraphics[height=0.8cm]{company_logo.png}}
+
+% =============================================================================
+% DOCUMENT
+% =============================================================================
+
+\begin{document}
+
+% --- Title Slide ---
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+% --- Agenda ---
+\begin{frame}{Agenda}
+  \begin{enumerate}
+    \item Executive Summary
+    \item Key Achievements
+    \item Challenges \& Mitigation
+    \item Next Steps
+    \item Q\&A
+  \end{enumerate}
+  
+  \vspace{0.5cm}
+  
+  \textbf{Duration}: 30 minutes + discussion
+\end{frame}
+
+% =============================================================================
+% EXECUTIVE SUMMARY
+% =============================================================================
+
+\section{Executive Summary}
+
+\begin{frame}{Executive Summary}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{Project Status}: \textcolor{green!70!black}{On Track}
+      
+      \vspace{0.3cm}
+      
+      \textbf{Key Metrics}
+      \begin{itemize}
+        \item Budget: 92\% utilized
+        \item Timeline: 2 weeks ahead
+        \item Quality: All KPIs met
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Highlights}
+      \begin{itemize}
+        \item Milestone A completed
+        \item Partnership secured
+        \item Team expanded
+      \end{itemize}
+      
+      \vspace{0.3cm}
+      
+      \textbf{Attention Needed}
+      \begin{itemize}
+        \item Resource constraint
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% =============================================================================
+% KEY ACHIEVEMENTS
+% =============================================================================
+
+\section{Key Achievements}
+
+\begin{frame}{Key Achievements}
+  \begin{block}{Milestone 1: Platform Launch}
+    \begin{itemize}
+      \item Launched on schedule
+      \item 10,000+ users in first week
+      \item 98\% uptime achieved
+    \end{itemize}
+  \end{block}
+  
+  \begin{block}{Milestone 2: Partnership}
+    \begin{itemize}
+      \item Strategic partnership signed
+      \item Revenue projection: \$2M annual
+      \item Integration complete
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Performance Metrics}
+  \begin{table}
+    \centering
+    \begin{tabular}{lccc}
+      \toprule
+      \textbf{Metric} & \textbf{Target} & \textbf{Actual} & \textbf{Status} \\
+      \midrule
+      User Adoption & 5,000 & 10,247 & \textcolor{green!70!black}{$\uparrow$ 105\%} \\
+      Revenue & \$500K & \$520K & \textcolor{green!70!black}{$\uparrow$ 4\%} \\
+      NPS Score & 40 & 52 & \textcolor{green!70!black}{$\uparrow$ 30\%} \\
+      Support Tickets & 100/day & 45/day & \textcolor{green!70!black}{$\downarrow$ 55\%} \\
+      \bottomrule
+    \end{tabular}
+  \end{table>
+\end{frame}
+
+% =============================================================================
+% CHALLENGES
+% =============================================================================
+
+\section{Challenges}
+
+\begin{frame}{Challenges \& Mitigation}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{Challenge 1: Resources}
+      \begin{itemize}
+        \item Issue: Developer shortage
+        \item Impact: Medium
+        \item Mitigation: Contractor hire
+        \item Status: In progress
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Challenge 2: Scope}
+      \begin{itemize}
+        \item Issue: Feature creep
+        \item Impact: Low
+        \item Mitigation: Strict change control
+        \item Status: Resolved
+      \end{itemize}
+    \end{column}
+  \end{columns>
+  
+  \vspace{0.5cm}
+  
+  \begin{alertblock}{Action Required}
+    Executive approval needed for contractor budget increase of \$50K.
+  \end{alertblock}
+\end{frame}
+
+% =============================================================================
+% NEXT STEPS
+% =============================================================================
+
+\section{Next Steps}
+
+\begin{frame}{Roadmap: Next Quarter}
+  \begin{tikzpicture}[
+    node distance=1.5cm,
+    box/.style={rectangle, draw=corpblue, fill=corplight!30, 
+                minimum width=3cm, minimum height=1cm, align=center}
+  ]
+    \node[box] (m1) {Week 1-2\\Requirements};
+    \node[box, right=of m1] (m2) {Week 3-6\\Development};
+    \node[box, right=of m2] (m3) {Week 7-8\\Testing};
+    \node[box, right=of m3] (m4) {Week 9-10\\Launch};
+    
+    \draw[->, thick, corpblue] (m1) -- (m2);
+    \draw[->, thick, corpblue] (m2) -- (m3);
+    \draw[->, thick, corpblue] (m3) -- (m4);
+  \end{tikzpicture}
+  
+  \vspace{0.5cm}
+  
+  \textbf{Key Deliverables}
+  \begin{itemize}
+    \item Feature X release (Week 4)
+    \item Partnership integration (Week 6)
+    \item Q1 campaign launch (Week 10)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Action Items}
+  \begin{table}
+    \centering
+    \begin{tabular}{llll}
+      \toprule
+      \textbf{Action} & \textbf{Owner} & \textbf{Due} & \textbf{Status} \\
+      \midrule
+      Approve contractor budget & CEO & Nov 15 & Pending \\
+      Complete security audit & CTO & Nov 20 & In Progress \\
+      Finalize partnership terms & BD Lead & Nov 25 & In Progress \\
+      Launch marketing campaign & CMO & Dec 1 & Not Started \\
+      \bottomrule
+    \end{tabular>
+  \end{table}
+\end{frame}
+
+% =============================================================================
+% CLOSING
+% =============================================================================
+
+\section{Q\&A}
+
+\begin{frame}[plain]
+  \begin{center}
+    \vspace{2cm}
+    
+    {\Large \textbf{Questions?}}
+    
+    \vspace{1.5cm}
+    
+    \begin{tabular}{c}
+      Project Team \\
+      \texttt{project@company.com} \\
+    \end{tabular>
+    
+    \vspace{1.5cm}
+    
+    {\footnotesize Next Review: Month Day, Year}
+  \end{center}
+\end{frame}
+
+% =============================================================================
+% APPENDIX
+% =============================================================================
+
+\appendix
+
+\begin{frame}{Appendix: Detailed Budget}
+  Budget breakdown for reference.
+\end{frame}
+
+\begin{frame}{Appendix: Technical Architecture}
+  System architecture diagram.
+\end{frame>
+
+\end{document}

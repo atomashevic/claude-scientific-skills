@@ -1,0 +1,645 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+
+% =============================================================================
+% MODERN MINIMALIST BEAMER - ACADEMIC SEMINAR (45-60 minutes)
+% =============================================================================
+% Comprehensive template for academic seminars and departmental talks.
+% Includes detailed methods, multiple result sections, and extensive discussion.
+% Target: 45-60 slides for 45-60 minute talk.
+% =============================================================================
+
+% --- Theme: Minimalistic defaults ---
+\usetheme{default}
+\usecolortheme{default}
+
+% --- Encoding and Fonts ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% --- Essential Packages ---
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+% --- Math Support ---
+\usepackage{amsmath,amssymb}
+
+% --- Citations ---
+\usepackage[style=authoryear,maxcitenames=2,backend=biber]{biblatex}
+\addbibresource{references.bib}
+\renewcommand*{\bibfont}{\tiny}
+
+% --- Graphics Path ---
+\graphicspath{{figures/}}
+
+% --- Remove Navigation Symbols ---
+\setbeamertemplate{navigation symbols}{}
+
+% --- Colors: Plain Black on White ---
+\setbeamercolor{structure}{fg=black}
+\setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{frametitle}{fg=black,bg=white}
+\setbeamercolor{block title}{fg=black,bg=white}
+\setbeamercolor{block body}{fg=black,bg=white}
+\setbeamercolor{background canvas}{bg=white}
+
+% --- Remove Headline and Footline ---
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}{}
+
+% --- Comfortable Text Margins ---
+\setbeamersize{text margin left=8mm,text margin right=8mm}
+
+% --- Clean Frame Title with Horizontal Rule ---
+\setbeamertemplate{frametitle}{%
+  \vspace*{0.55em}%
+  {\Large\bfseries\insertframetitle\par}%
+  \vspace*{0.20em}\hrule\vspace*{0.55em}%
+}
+
+% --- Cleaner Bullet Points ---
+\setbeamertemplate{itemize item}{\textbullet}
+\setbeamertemplate{itemize subitem}{\textendash}
+\setbeamertemplate{enumerate item}{\arabic{enumi}.}
+
+% --- Custom Commands ---
+\newcommand{\FullSlideImage}[1]{%
+  \begin{frame}[plain]
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[anchor=center] at (current page.center) {%
+        \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{#1}%
+      };
+    \end{tikzpicture}
+  \end{frame}
+}
+
+\newcommand{\TightTableSetup}{%
+  \setlength{\tabcolsep}{4pt}%
+  \renewcommand{\arraystretch}{1.15}%
+}
+
+% --- Section Title Slide ---
+\newcommand{\SectionSlide}[1]{%
+  \begin{frame}[plain]
+    \vfill
+    \begin{center}
+      {\Huge\bfseries #1}
+    \end{center}
+    \vfill
+  \end{frame}
+}
+
+% =============================================================================
+% TITLE PAGE INFORMATION
+% =============================================================================
+
+\title[Short Title]{Your Seminar Title:\\A Detailed Investigation}
+\subtitle{Department Seminar Series}
+\author{Your Name}
+\institute{%
+  Department of Your Field\\
+  Your University\\
+  \vspace{0.3cm}
+  \texttt{email@university.edu}
+}
+\date{Month Day, Year}
+
+% =============================================================================
+% DOCUMENT START
+% =============================================================================
+
+\begin{document}
+
+% --- Title Slide ---
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+% --- Outline ---
+\begin{frame}{Outline}
+\begin{enumerate}
+  \item Background and Motivation
+  \item Research Questions
+  \item Methods
+  \item Results
+    \begin{itemize}
+      \item Study 1: Description
+      \item Study 2: Description
+      \item Study 3: Description
+    \end{itemize}
+  \item Discussion and Implications
+  \item Conclusions and Future Work
+\end{enumerate}
+\end{frame}
+
+% =============================================================================
+% PART 1: BACKGROUND AND MOTIVATION (~10 minutes)
+% =============================================================================
+
+\SectionSlide{Background}
+
+\begin{frame}{The Broader Context}
+\begin{itemize}
+  \item Domain overview and importance
+  \item Current state of the field
+  \item Key challenges and open questions
+  \item Why this matters (societal/scientific impact)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Prior Work: Foundations}
+\begin{columns}[T]
+  \begin{column}{0.48\textwidth}
+    \textbf{Theoretical Foundations}
+    \begin{itemize}
+      \item Key theory 1 % \parencite{author1}
+      \item Key theory 2 % \parencite{author2}
+      \item Established principles
+    \end{itemize}
+  \end{column}
+  \begin{column}{0.48\textwidth}
+    \textbf{Empirical Findings}
+    \begin{itemize}
+      \item Major study 1 % \parencite{author3}
+      \item Major study 2 % \parencite{author4}
+      \item Consensus findings
+    \end{itemize}
+  \end{column}
+\end{columns}
+\end{frame}
+
+% --- Prior work diagram ---
+% \FullSlideImage{prior_work_summary.png}
+
+\begin{frame}{Prior Work: Recent Advances}
+\begin{itemize}
+  \item Recent development 1 and its significance
+  \item Recent development 2 and its limitations
+  \item Emerging trends in the field
+  \item How current work builds on these advances
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The Knowledge Gap}
+\begin{enumerate}
+  \item \textbf{Gap 1}: What remains unknown
+  \item \textbf{Gap 2}: Methodological limitations
+  \item \textbf{Gap 3}: Underexplored domains
+\end{enumerate}
+
+\vspace{0.55em}
+\begin{block}{Central Question}
+How can we address these gaps to advance understanding of X?
+\end{block}
+\end{frame}
+
+\begin{frame}{Research Questions}
+\begin{enumerate}
+  \item \textbf{RQ1}: First research question\\
+  \emph{Hypothesis: Expected finding}
+  
+  \vspace{0.4em}
+  \item \textbf{RQ2}: Second research question\\
+  \emph{Hypothesis: Expected finding}
+  
+  \vspace{0.4em}
+  \item \textbf{RQ3}: Third research question\\
+  \emph{Hypothesis: Expected finding}
+\end{enumerate}
+\end{frame}
+
+% =============================================================================
+% PART 2: METHODS (~8 minutes)
+% =============================================================================
+
+\SectionSlide{Methods}
+
+\begin{frame}{Overall Research Design}
+\begin{columns}[T]
+  \begin{column}{0.55\textwidth}
+    \textbf{Approach}
+    \begin{itemize}
+      \item Study design type
+      \item Rationale for approach
+      \item Key advantages
+    \end{itemize}
+    
+    \vspace{0.5em}
+    \textbf{Studies}
+    \begin{enumerate}
+      \item Study 1: Purpose
+      \item Study 2: Purpose
+      \item Study 3: Purpose
+    \end{enumerate}
+  \end{column}
+  \begin{column}{0.42\textwidth}
+    \centering
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{2.5cm}[Research Design Diagram]\vspace{2.5cm}}}
+  \end{column}
+\end{columns}
+\end{frame}
+
+% --- Methods diagram ---
+% \FullSlideImage{methods_overview.png}
+
+\begin{frame}{Data Collection}
+\begin{itemize}
+  \item \textbf{Sample}: Population, recruitment, size (N = X)
+  \item \textbf{Materials}: Instruments, stimuli, tools
+  \item \textbf{Procedure}: Steps, timeline, protocols
+  \item \textbf{Ethics}: IRB approval, consent, data protection
+\end{itemize}
+
+\vspace{0.5em}
+\TightTableSetup
+\small
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Study} & \textbf{Sample Size} & \textbf{Duration} \\
+\midrule
+Study 1 & N = 150 & 3 months \\
+Study 2 & N = 200 & 6 months \\
+Study 3 & N = 500 & 12 months \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}{Analysis Approach}
+\begin{columns}[T]
+  \begin{column}{0.48\textwidth}
+    \textbf{Quantitative}
+    \begin{itemize}
+      \item Statistical tests used
+      \item Software and versions
+      \item Significance criteria
+      \item Effect size measures
+    \end{itemize}
+  \end{column}
+  \begin{column}{0.48\textwidth}
+    \textbf{Qualitative} (if applicable)
+    \begin{itemize}
+      \item Coding approach
+      \item Reliability measures
+      \item Validation methods
+    \end{itemize}
+  \end{column}
+\end{columns}
+
+\vspace{0.5em}
+\textbf{Key Model}:
+\begin{equation}
+  Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_1 X_2 + \epsilon
+\end{equation}
+\end{frame}
+
+% =============================================================================
+% PART 3: RESULTS - STUDY 1 (~10 minutes)
+% =============================================================================
+
+\SectionSlide{Study 1: Title}
+
+\begin{frame}{Study 1: Overview}
+\begin{itemize}
+  \item \textbf{Purpose}: What this study addresses
+  \item \textbf{Method}: Brief methodology specific to this study
+  \item \textbf{Sample}: Participants/data for this study
+  \item \textbf{Key measures}: What was measured
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Study 1: Main Results}
+\begin{columns}[c]
+  \begin{column}{0.55\textwidth}
+    \textbf{Key Findings}
+    \begin{itemize}
+      \item Finding 1: Description with statistics
+      \item Finding 2: Description with statistics
+      \item Finding 3: Description with statistics
+    \end{itemize}
+    
+    \vspace{0.5em}
+    \textbf{Statistical Summary}
+    \begin{itemize}
+      \item Primary outcome: $p < 0.001$, $d = 0.82$
+      \item Secondary outcome: $p = 0.003$, $d = 0.45$
+    \end{itemize}
+  \end{column}
+  \begin{column}{0.42\textwidth}
+    \centering
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{3cm}[Study 1 Figure]\vspace{3cm}}}
+  \end{column}
+\end{columns}
+\end{frame}
+
+% --- Study 1 main figure ---
+% \FullSlideImage{study1_results.png}
+
+\begin{frame}{Study 1: Additional Analyses}
+\TightTableSetup
+\small
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Condition} & \textbf{Mean (SD)} & \textbf{95\% CI} & \textbf{Effect} \\
+\midrule
+Control & 45.2 (12.3) & [42.1, 48.3] & --- \\
+Treatment A & 52.8 (11.7) & [49.9, 55.7] & $d = 0.62$ \\
+Treatment B & 58.4 (10.9) & [55.7, 61.1] & $d = 1.14$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{0.5em}
+\begin{itemize}
+  \item Subgroup analyses
+  \item Sensitivity checks
+  \item Robustness of findings
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Study 1: Summary}
+\begin{block}{Study 1 Conclusions}
+\begin{enumerate}
+  \item Main finding supports/contradicts hypothesis 1
+  \item Effect size is small/medium/large
+  \item Results are consistent with prior work / novel
+\end{enumerate}
+\end{block}
+
+\vspace{0.5em}
+\textbf{Limitations}: Specific to this study\\
+\textbf{Implications}: What this tells us about RQ1
+\end{frame}
+
+% =============================================================================
+% PART 4: RESULTS - STUDY 2 (~10 minutes)
+% =============================================================================
+
+\SectionSlide{Study 2: Title}
+
+\begin{frame}{Study 2: Overview}
+\begin{itemize}
+  \item \textbf{Purpose}: What this study addresses
+  \item \textbf{Building on Study 1}: How it extends previous findings
+  \item \textbf{Method}: Methodology specific to this study
+  \item \textbf{Sample}: Participants/data for this study
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Study 2: Main Results}
+\begin{columns}[c]
+  \begin{column}{0.42\textwidth}
+    \centering
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{3cm}[Study 2 Figure]\vspace{3cm}}}
+  \end{column}
+  \begin{column}{0.55\textwidth}
+    \textbf{Key Findings}
+    \begin{itemize}
+      \item Finding 1: Description
+      \item Finding 2: Description
+      \item Comparison with Study 1
+    \end{itemize}
+    
+    \vspace{0.5em}
+    \textbf{Interpretation}
+    \begin{itemize}
+      \item What this means
+      \item Connection to theory
+    \end{itemize}
+  \end{column}
+\end{columns}
+\end{frame}
+
+% --- Study 2 main figure ---
+% \FullSlideImage{study2_results.png}
+
+\begin{frame}{Study 2: Summary}
+\begin{block}{Study 2 Conclusions}
+\begin{enumerate}
+  \item Replication of Study 1 findings: Yes/No/Partial
+  \item Extension to new context/population
+  \item Support for hypothesis 2
+\end{enumerate}
+\end{block}
+\end{frame}
+
+% =============================================================================
+% PART 5: RESULTS - STUDY 3 (~10 minutes)
+% =============================================================================
+
+\SectionSlide{Study 3: Title}
+
+\begin{frame}{Study 3: Overview}
+\begin{itemize}
+  \item \textbf{Purpose}: Final study addressing remaining questions
+  \item \textbf{Novel elements}: What's different from Studies 1-2
+  \item \textbf{Method}: Methodology specific to this study
+  \item \textbf{Sample}: Participants/data for this study
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Study 3: Main Results}
+Main findings with figures and statistics.
+
+\vspace{0.5em}
+\begin{columns}[T]
+  \begin{column}{0.48\textwidth}
+    \centering
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{2cm}[Figure A]\vspace{2cm}}}
+    \footnotesize Condition A
+  \end{column}
+  \begin{column}{0.48\textwidth}
+    \centering
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{2cm}[Figure B]\vspace{2cm}}}
+    \footnotesize Condition B
+  \end{column}
+\end{columns}
+\end{frame}
+
+% --- Study 3 main figure ---
+% \FullSlideImage{study3_results.png}
+
+\begin{frame}{Study 3: Summary}
+\begin{block}{Study 3 Conclusions}
+\begin{enumerate}
+  \item Integration with Studies 1-2
+  \item Support for hypothesis 3
+  \item Overall pattern of findings
+\end{enumerate}
+\end{block}
+\end{frame}
+
+% =============================================================================
+% PART 6: DISCUSSION (~8 minutes)
+% =============================================================================
+
+\SectionSlide{Discussion}
+
+\begin{frame}{Summary of Findings}
+\TightTableSetup
+\small
+\begin{tabularx}{\textwidth}{@{}lXc@{}}
+\toprule
+\textbf{Research Question} & \textbf{Finding} & \textbf{Support} \\
+\midrule
+RQ1: Question & Main result & Yes/Partial/No \\
+RQ2: Question & Main result & Yes/Partial/No \\
+RQ3: Question & Main result & Yes/Partial/No \\
+\bottomrule
+\end{tabularx}
+
+\vspace{0.5em}
+\begin{itemize}
+  \item Consistent pattern across studies
+  \item Effect sizes and practical significance
+  \item Confidence in conclusions
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Theoretical Implications}
+\begin{enumerate}
+  \item \textbf{Contribution 1}: How this advances theory
+  \item \textbf{Contribution 2}: New understanding gained
+  \item \textbf{Contribution 3}: Resolution of prior debates
+\end{enumerate}
+
+\vspace{0.55em}
+\textbf{Relation to Prior Work}
+\begin{itemize}
+  \item Consistent with: Relevant prior studies
+  \item Extends beyond: What we add
+  \item Challenges: What we contradict
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Practical Implications}
+\begin{columns}[T]
+  \begin{column}{0.48\textwidth}
+    \textbf{For Researchers}
+    \begin{itemize}
+      \item Methodological advances
+      \item New research directions
+      \item Tools and resources
+    \end{itemize}
+  \end{column}
+  \begin{column}{0.48\textwidth}
+    \textbf{For Practitioners}
+    \begin{itemize}
+      \item Applied recommendations
+      \item Policy implications
+      \item Clinical/industry relevance
+    \end{itemize}
+  \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Limitations}
+\begin{enumerate}
+  \item \textbf{Limitation 1}: Description and impact\\
+  \emph{Mitigation}: How we addressed or future work can address
+  
+  \vspace{0.3em}
+  \item \textbf{Limitation 2}: Description and impact\\
+  \emph{Mitigation}: How we addressed or future work can address
+  
+  \vspace{0.3em}
+  \item \textbf{Limitation 3}: Description and impact\\
+  \emph{Mitigation}: How we addressed or future work can address
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Future Directions}
+\begin{enumerate}
+  \item \textbf{Short-term}: Immediate next steps
+  \begin{itemize}
+    \item Follow-up studies
+    \item Replication in new contexts
+  \end{itemize}
+  
+  \vspace{0.3em}
+  \item \textbf{Long-term}: Broader research agenda
+  \begin{itemize}
+    \item Theoretical development
+    \item Applied implementations
+    \item Interdisciplinary connections
+  \end{itemize}
+\end{enumerate}
+\end{frame}
+
+% =============================================================================
+% PART 7: CONCLUSIONS (~3 minutes)
+% =============================================================================
+
+\SectionSlide{Conclusions}
+
+\begin{frame}{Key Takeaways}
+\begin{enumerate}
+  \item \textbf{Main Finding 1}: One sentence summary
+  \item \textbf{Main Finding 2}: One sentence summary
+  \item \textbf{Main Finding 3}: One sentence summary
+  \item \textbf{Broader Impact}: Significance for field
+\end{enumerate}
+
+\vspace{0.55em}
+\begin{block}{Bottom Line}
+One memorable sentence capturing the essence of this research.
+\end{block}
+\end{frame}
+
+\begin{frame}[plain]
+\begin{center}
+\vspace{1.5cm}
+{\Large \textbf{Thank You}}
+
+\vspace{0.8cm}
+{\large Questions \& Discussion}
+
+\vspace{1.2cm}
+\begin{tabular}{c}
+Your Name \\
+\texttt{email@university.edu} \\
+\url{https://yourwebsite.edu}
+\end{tabular}
+
+\vspace{1cm}
+\footnotesize
+Acknowledgments: Funding, collaborators, lab members, etc.
+\end{center}
+\end{frame}
+
+% =============================================================================
+% REFERENCES
+% =============================================================================
+
+\begin{frame}[allowframebreaks]{References}
+  \printbibliography
+\end{frame}
+
+% =============================================================================
+% BACKUP SLIDES
+% =============================================================================
+
+\appendix
+
+\begin{frame}{Backup: Extended Methods}
+Additional methodological details.
+\end{frame}
+
+\begin{frame}{Backup: Supplementary Analyses}
+Additional analyses for questions.
+\end{frame}
+
+\begin{frame}{Backup: Alternative Interpretations}
+Discussion of alternative explanations.
+\end{frame}
+
+\end{document}

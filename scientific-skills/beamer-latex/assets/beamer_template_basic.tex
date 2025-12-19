@@ -1,0 +1,162 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+
+% =============================================================================
+% BASIC BEAMER TEMPLATE
+% =============================================================================
+% A minimal starting point for Beamer presentations.
+% Customize the theme and colors to match your needs.
+% =============================================================================
+
+% --- Theme Selection ---
+% Uncomment your preferred combination:
+
+% Professional Blue (default)
+\usetheme{Madrid}
+\usecolortheme{default}
+
+% Warm Academic
+% \usetheme{Madrid}
+% \usecolortheme{beaver}
+
+% Minimal Gray
+% \usetheme{Copenhagen}
+% \usecolortheme{seagull}
+
+% Modern Blue
+% \usetheme{CambridgeUS}
+% \usecolortheme{dolphin}
+
+% --- Encoding and Fonts ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% --- Essential Packages ---
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+
+% --- Optional: Remove Navigation Symbols ---
+\setbeamertemplate{navigation symbols}{}
+
+% --- Optional: Page Numbers ---
+\setbeamertemplate{footline}[frame number]
+
+% =============================================================================
+% TITLE INFORMATION
+% =============================================================================
+
+\title{Your Presentation Title}
+\subtitle{Optional Subtitle}
+\author{Your Name}
+\institute{Your Institution}
+\date{\today}
+
+% =============================================================================
+% DOCUMENT
+% =============================================================================
+
+\begin{document}
+
+% --- Title Slide ---
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% --- Outline (optional) ---
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+% =============================================================================
+% SECTION 1
+% =============================================================================
+
+\section{Introduction}
+
+\begin{frame}{Introduction}
+  \begin{itemize}
+    \item First point
+    \item Second point
+    \item Third point
+  \end{itemize}
+\end{frame}
+
+% =============================================================================
+% SECTION 2
+% =============================================================================
+
+\section{Methods}
+
+\begin{frame}{Methods}
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      \textbf{Approach}
+      \begin{itemize}
+        \item Step 1
+        \item Step 2
+        \item Step 3
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      % Add figure here
+      \centering
+      \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}[Figure]\vspace{2cm}}}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% =============================================================================
+% SECTION 3
+% =============================================================================
+
+\section{Results}
+
+\begin{frame}{Results}
+  \begin{table}
+    \centering
+    \begin{tabular}{lcc}
+      \toprule
+      Method & Accuracy & Time \\
+      \midrule
+      Baseline & 0.82 & 10s \\
+      Proposed & \textbf{0.94} & 15s \\
+      \bottomrule
+    \end{tabular}
+    \caption{Results comparison}
+  \end{table}
+\end{frame}
+
+% =============================================================================
+% SECTION 4
+% =============================================================================
+
+\section{Conclusion}
+
+\begin{frame}{Conclusions}
+  \begin{block}{Key Takeaways}
+    \begin{enumerate}
+      \item First conclusion
+      \item Second conclusion
+      \item Third conclusion
+    \end{enumerate}
+  \end{block}
+\end{frame}
+
+% --- Thank You ---
+\begin{frame}
+  \begin{center}
+    {\Large \textbf{Thank You}}
+    
+    \vspace{1cm}
+    
+    Questions?
+    
+    \vspace{1cm}
+    
+    \texttt{email@institution.edu}
+  \end{center}
+\end{frame}
+
+\end{document}

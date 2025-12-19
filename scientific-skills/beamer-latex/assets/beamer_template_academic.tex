@@ -1,0 +1,365 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+
+% =============================================================================
+% ACADEMIC BEAMER TEMPLATE
+% =============================================================================
+% Professional template for academic conferences, seminars, and defenses.
+% Includes all common features: overlays, blocks, figures, tables, citations.
+% =============================================================================
+
+% --- Theme: Professional Academic ---
+\usetheme{Madrid}
+\usecolortheme{beaver}
+
+% --- Encoding and Fonts ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% --- Essential Packages ---
+\usepackage{graphicx}
+\graphicspath{{./figures/}}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{multirow}
+
+% --- Code Listings ---
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue},
+  commentstyle=\color{green!60!black},
+  numbers=left,
+  numberstyle=\tiny,
+  frame=single,
+  breaklines=true
+}
+
+% --- TikZ ---
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning}
+
+% --- Citations ---
+\usepackage[style=authoryear,maxcitenames=2,backend=biber]{biblatex}
+\addbibresource{references.bib}
+\renewcommand*{\bibfont}{\scriptsize}
+
+% --- Custom Colors ---
+\definecolor{primarycolor}{RGB}{128,0,0}    % Maroon
+\definecolor{secondarycolor}{RGB}{0,90,156} % Blue
+
+\setbeamercolor{structure}{fg=primarycolor}
+\setbeamercolor{block title}{fg=white,bg=primarycolor}
+
+% --- Navigation and Footer ---
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+
+% =============================================================================
+% TITLE INFORMATION
+% =============================================================================
+
+\title[Short Title]{Full Presentation Title:\\A Descriptive Subtitle}
+\author[Author]{Author Name\inst{1} \and Co-Author Name\inst{2}}
+\institute[Institution]{
+  \inst{1}Department of XYZ, University A\\
+  \inst{2}Department of ABC, University B
+}
+\date{Conference Name\\Month Day, Year}
+
+% Optional logo
+% \logo{\includegraphics[height=0.8cm]{logo.png}}
+
+% =============================================================================
+% DOCUMENT
+% =============================================================================
+
+\begin{document}
+
+% --- Title Slide ---
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+% --- Outline ---
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+% =============================================================================
+% INTRODUCTION
+% =============================================================================
+
+\section{Introduction}
+
+\begin{frame}{Motivation}
+  \begin{itemize}
+    \item<1-> Context and importance of the research area
+    \item<2-> Key challenge or problem being addressed
+    \item<3-> Gap in current knowledge or methods
+    \item<4-> Preview of our contribution
+  \end{itemize}
+  
+  \vfill
+  
+  \uncover<4->{
+    \begin{block}{Research Question}
+      What is the specific question this research addresses?
+    \end{block}
+  }
+\end{frame}
+
+\begin{frame}{Background}
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      \textbf{Prior Work}
+      \begin{itemize}
+        \item Key finding 1 % \parencite{author1}
+        \item Key finding 2 % \parencite{author2}
+        \item Knowledge gap
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{figure}
+        \centering
+        \fbox{\parbox{0.8\textwidth}{\centering\vspace{2cm}[Context Figure]\vspace{2cm}}}
+        \caption{Problem illustration}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% =============================================================================
+% METHODS
+% =============================================================================
+
+\section{Methods}
+
+\begin{frame}{Approach Overview}
+  \begin{columns}[T]
+    \begin{column}{0.55\textwidth}
+      \textbf{Study Design}
+      \begin{itemize}
+        \item Design type
+        \item Sample: N = X
+        \item Key procedures
+        \item Analysis strategy
+      \end{itemize}
+      
+      \vspace{0.5cm}
+      
+      \begin{alertblock}{Key Innovation}
+        What makes this approach novel
+      \end{alertblock}
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \begin{figure}
+        \centering
+        \fbox{\parbox{0.9\textwidth}{\centering\vspace{2.5cm}[Methods Diagram]\vspace{2.5cm}}}
+        \caption{Experimental design}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Analysis Details}
+  \begin{itemize}
+    \item \textbf{Primary outcome}: Description
+    \item \textbf{Statistical approach}: Tests and methods
+    \item \textbf{Software}: Tools and versions
+  \end{itemize}
+  
+  \vspace{0.5cm}
+  
+  \begin{exampleblock}{Key Model}
+    \begin{equation}
+      Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \epsilon
+    \end{equation}
+  \end{exampleblock}
+\end{frame}
+
+% =============================================================================
+% RESULTS
+% =============================================================================
+
+\section{Results}
+
+\begin{frame}{Main Finding 1}
+  \begin{figure}
+    \centering
+    \fbox{\parbox{0.75\textwidth}{\centering\vspace{3cm}[Main Result Figure]\vspace{3cm}}}
+    \caption{Primary outcome ($p < 0.001$)}
+  \end{figure}
+  
+  \begin{itemize}
+    \item<2-> Key observation
+    \item<3-> Statistical significance
+    \item<4-> Interpretation
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Main Finding 2}
+  \begin{columns}[c]
+    \begin{column}{0.48\textwidth}
+      \begin{figure}
+        \centering
+        \fbox{\parbox{0.9\textwidth}{\centering\vspace{2cm}[Result A]\vspace{2cm}}}
+        \caption{Condition A}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{figure}
+        \centering
+        \fbox{\parbox{0.9\textwidth}{\centering\vspace{2cm}[Result B]\vspace{2cm}}}
+        \caption{Condition B}
+      \end{figure}
+    \end{column}
+  \end{columns}
+  
+  \vspace{0.3cm}
+  
+  \begin{itemize}
+    \item Comparison: Key difference observed
+    \item Statistical test: $t(50) = 3.4, p = 0.001$
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Summary Table}
+  \begin{table}
+    \centering
+    \caption{Results across conditions}
+    \begin{tabular}{lccc}
+      \toprule
+      \textbf{Condition} & \textbf{Metric 1} & \textbf{Metric 2} & \textbf{$p$-value} \\
+      \midrule
+      Control & 45.2 $\pm$ 3.1 & 0.65 & --- \\
+      Treatment A & 52.8 $\pm$ 2.9 & 0.74 & 0.012 \\
+      Treatment B & 67.8 $\pm$ 2.7 & \textbf{0.82} & $< 0.001$ \\
+      \bottomrule
+    \end{tabular}
+  \end{table>
+  
+  \begin{itemize}
+    \item Consistent pattern across metrics
+    \item Effect robust to controls
+  \end{itemize>
+\end{frame}
+
+% =============================================================================
+% DISCUSSION
+% =============================================================================
+
+\section{Discussion}
+
+\begin{frame}{Interpretation}
+  \textbf{Key Findings}
+  \begin{enumerate}
+    \item First main result and significance
+    \item Second main result and implications
+    \item Supporting evidence
+  \end{enumerate}
+  
+  \vspace{0.5cm}
+  
+  \textbf{Relation to Prior Work}
+  \begin{itemize}
+    \item Consistent with previous studies
+    \item Extends beyond current literature
+    \item Resolves open questions
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Implications and Limitations}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{Impact}
+      \begin{itemize}
+        \item Scientific contribution
+        \item Practical applications
+        \item Future directions
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Limitations}
+      \begin{itemize}
+        \item Limitation 1
+        \item Limitation 2
+        \item How future work addresses these
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% =============================================================================
+% CONCLUSION
+% =============================================================================
+
+\section{Conclusion}
+
+\begin{frame}{Conclusions}
+  \begin{block}{Key Takeaways}
+    \begin{enumerate}
+      \item \textbf{Finding 1}: Brief statement
+      \item \textbf{Finding 2}: Brief statement
+      \item \textbf{Impact}: Significance for field
+    \end{enumerate}
+  \end{block}
+  
+  \vspace{0.5cm}
+  
+  \textbf{Future Directions}
+  \begin{itemize}
+    \item Next step 1
+    \item Next step 2
+    \item Long-term goals
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[plain]
+  \begin{center}
+    {\Large \textbf{Thank You}}
+    
+    \vspace{0.8cm}
+    
+    {\large Questions?}
+    
+    \vspace{1cm}
+    
+    \begin{tabular}{c}
+      Author Name \\
+      \texttt{email@university.edu} \\
+      \url{https://yourwebsite.edu}
+    \end{tabular}
+    
+    \vspace{0.8cm}
+    
+    {\footnotesize
+      Funding: Grant Agency Award \#12345\\
+      Collaborators: Colleague 1, Colleague 2
+    }
+  \end{center}
+\end{frame}
+
+% =============================================================================
+% BACKUP SLIDES
+% =============================================================================
+
+\appendix
+
+\begin{frame}{Backup: Additional Analysis}
+  Additional content for anticipated questions.
+\end{frame}
+
+\begin{frame}{Backup: Methodological Details}
+  Detailed methods for follow-up questions.
+\end{frame}
+
+% =============================================================================
+% REFERENCES
+% =============================================================================
+
+\begin{frame}[allowframebreaks]{References}
+  \printbibliography
+\end{frame}
+
+\end{document}

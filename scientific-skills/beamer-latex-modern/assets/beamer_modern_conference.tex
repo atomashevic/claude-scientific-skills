@@ -1,0 +1,330 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+
+% =============================================================================
+% MODERN MINIMALIST BEAMER - CONFERENCE TALK (15-20 minutes)
+% =============================================================================
+% Focused template for short conference presentations.
+% Emphasizes key findings with minimal methods.
+% Target: 15-20 slides for 15-20 minute talk.
+% =============================================================================
+
+% --- Theme: Minimalistic defaults ---
+\usetheme{default}
+\usecolortheme{default}
+
+% --- Encoding and Fonts ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% --- Essential Packages ---
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+% --- Optional: Citations ---
+% \usepackage[style=authoryear,maxcitenames=2,backend=biber]{biblatex}
+% \addbibresource{references.bib}
+% \renewcommand*{\bibfont}{\tiny}
+
+% --- Graphics Path ---
+\graphicspath{{figures/}}
+
+% --- Remove Navigation Symbols ---
+\setbeamertemplate{navigation symbols}{}
+
+% --- Colors: Plain Black on White ---
+\setbeamercolor{structure}{fg=black}
+\setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{frametitle}{fg=black,bg=white}
+\setbeamercolor{block title}{fg=black,bg=white}
+\setbeamercolor{block body}{fg=black,bg=white}
+\setbeamercolor{background canvas}{bg=white}
+
+% --- Remove Headline and Footline ---
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}{}
+
+% --- Comfortable Text Margins ---
+\setbeamersize{text margin left=8mm,text margin right=8mm}
+
+% --- Clean Frame Title with Horizontal Rule ---
+\setbeamertemplate{frametitle}{%
+  \vspace*{0.55em}%
+  {\Large\bfseries\insertframetitle\par}%
+  \vspace*{0.20em}\hrule\vspace*{0.55em}%
+}
+
+% --- Cleaner Bullet Points ---
+\setbeamertemplate{itemize item}{\textbullet}
+\setbeamertemplate{itemize subitem}{\textendash}
+\setbeamertemplate{enumerate item}{\arabic{enumi}.}
+
+% --- Custom Commands ---
+\newcommand{\FullSlideImage}[1]{%
+  \begin{frame}[plain]
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[anchor=center] at (current page.center) {%
+        \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{#1}%
+      };
+    \end{tikzpicture}
+  \end{frame}
+}
+
+\newcommand{\TightTableSetup}{%
+  \setlength{\tabcolsep}{4pt}%
+  \renewcommand{\arraystretch}{1.15}%
+}
+
+% =============================================================================
+% TITLE PAGE INFORMATION
+% =============================================================================
+
+\title[Short Title]{Your Conference Paper Title}
+\subtitle{A Concise Subtitle}
+\author{Author Name\textsuperscript{1}, Co-Author Name\textsuperscript{2}}
+\institute{%
+  \textsuperscript{1}Institution One\\
+  \textsuperscript{2}Institution Two
+}
+\date{Conference Name 2025\\City, Country}
+
+% =============================================================================
+% DOCUMENT START
+% =============================================================================
+
+\begin{document}
+
+% --- Title Slide ---
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+% =============================================================================
+% INTRODUCTION (2-3 slides, ~2 minutes)
+% =============================================================================
+
+\begin{frame}{The Problem}
+\begin{itemize}
+  \item \textbf{Context}: Brief description of the domain
+  \item \textbf{Challenge}: What's difficult or unsolved
+  \item \textbf{Gap}: What's missing in current approaches
+\end{itemize}
+
+\vspace{0.8em}
+\begin{block}{Our Contribution}
+One sentence describing what this paper provides.
+\end{block}
+\end{frame}
+
+% --- Visual hook (optional image slide) ---
+% \FullSlideImage{problem_illustration.png}
+
+% =============================================================================
+% METHODS (1-2 slides, ~2 minutes)
+% =============================================================================
+
+\begin{frame}{Approach}
+\begin{columns}[T]
+  \begin{column}{0.55\textwidth}
+    \textbf{Key Innovation}
+    \begin{enumerate}
+      \item Novel component or technique
+      \item How it addresses the gap
+      \item Why it's better/different
+    \end{enumerate}
+  \end{column}
+  \begin{column}{0.42\textwidth}
+    % Placeholder for method diagram
+    \centering
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{2cm}[Method Diagram]\vspace{2cm}}}
+  \end{column}
+\end{columns}
+\end{frame}
+
+% --- Method diagram (as full-slide image) ---
+% \FullSlideImage{method_diagram.png}
+
+% =============================================================================
+% RESULTS (6-8 slides, ~8-10 minutes)
+% =============================================================================
+
+\begin{frame}{Experimental Setup}
+\begin{itemize}
+  \item \textbf{Dataset}: Description, size, characteristics
+  \item \textbf{Baselines}: Methods compared against
+  \item \textbf{Metrics}: How we measure success
+  \item \textbf{Implementation}: Key details (optional)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Main Result}
+\TightTableSetup
+\small
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Method} & \textbf{Accuracy} & \textbf{F1 Score} & \textbf{Time} \\
+\midrule
+Baseline A & 0.82 & 0.79 & 10s \\
+Baseline B & 0.85 & 0.81 & 25s \\
+Prior SOTA & 0.88 & 0.85 & 45s \\
+\textbf{Ours} & \textbf{0.94} & \textbf{0.92} & 15s \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{0.5em}
+\begin{itemize}
+  \item \textbf{+6\%} accuracy over prior state-of-the-art
+  \item \textbf{3× faster} than nearest competitor
+\end{itemize}
+\end{frame}
+
+% --- Results visualization ---
+% \FullSlideImage{results_chart.png}
+
+\begin{frame}{Key Finding 1}
+\begin{columns}[c]
+  \begin{column}{0.55\textwidth}
+    \textbf{Observation}
+    \begin{itemize}
+      \item What the data shows
+      \item Statistical significance
+      \item Interpretation
+    \end{itemize}
+    
+    \vspace{0.5em}
+    \textbf{Implication}
+    \begin{itemize}
+      \item Why this matters
+      \item Connection to hypothesis
+    \end{itemize}
+  \end{column}
+  \begin{column}{0.42\textwidth}
+    % Placeholder for figure
+    \centering
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{3cm}[Figure 1]\vspace{3cm}}}
+  \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Key Finding 2}
+\begin{columns}[c]
+  \begin{column}{0.42\textwidth}
+    % Placeholder for figure
+    \centering
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{3cm}[Figure 2]\vspace{3cm}}}
+  \end{column}
+  \begin{column}{0.55\textwidth}
+    \textbf{Analysis}
+    \begin{itemize}
+      \item Secondary finding
+      \item Supporting evidence
+      \item Robustness check
+    \end{itemize}
+  \end{column}
+\end{columns}
+\end{frame}
+
+% --- Additional result visualization ---
+% \FullSlideImage{analysis_detail.png}
+
+% =============================================================================
+% CONCLUSION (2 slides, ~2 minutes)
+% =============================================================================
+
+\begin{frame}{Summary}
+\begin{enumerate}
+  \item \textbf{Problem}: Brief restatement
+  \item \textbf{Solution}: Our approach in one sentence
+  \item \textbf{Results}: Key quantitative outcome
+  \item \textbf{Impact}: Why this matters
+\end{enumerate}
+
+\vspace{0.55em}
+\begin{block}{Take-home Message}
+One memorable sentence summarizing the contribution.
+\end{block}
+\end{frame}
+
+\begin{frame}[plain]
+\begin{center}
+\vspace{1.5cm}
+{\Large \textbf{Thank You}}
+
+\vspace{0.8cm}
+{\large Questions?}
+
+\vspace{1.2cm}
+\begin{tabular}{c}
+Author Name \\
+\texttt{email@institution.edu}
+\end{tabular}
+
+\vspace{0.8cm}
+\begin{columns}[c]
+  \begin{column}{0.5\textwidth}
+    \centering
+    % QR code for paper/code
+    % \includegraphics[width=2.5cm]{qr_code.png}\\
+    % \footnotesize Paper / Code
+  \end{column}
+  \begin{column}{0.5\textwidth}
+    \centering
+    \footnotesize
+    Paper: Conference 2025\\
+    Code: github.com/user/repo
+  \end{column}
+\end{columns}
+\end{center}
+\end{frame}
+
+% =============================================================================
+% BACKUP SLIDES
+% =============================================================================
+
+\appendix
+
+\begin{frame}{Backup: Ablation Study}
+\TightTableSetup
+\small
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Configuration} & \textbf{Accuracy} & \textbf{$\Delta$} \\
+\midrule
+Full model & 0.94 & --- \\
+w/o Component A & 0.89 & -5\% \\
+w/o Component B & 0.91 & -3\% \\
+w/o Component C & 0.87 & -7\% \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}{Backup: Additional Baselines}
+Extended comparison with additional methods.
+\begin{itemize}
+  \item Method X: Results and comparison
+  \item Method Y: Results and comparison
+  \item Method Z: Results and comparison
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Backup: Implementation Details}
+\begin{itemize}
+  \item \textbf{Hardware}: GPU/CPU specifications
+  \item \textbf{Software}: Framework, versions
+  \item \textbf{Training}: Epochs, learning rate, batch size
+  \item \textbf{Hyperparameters}: Key settings
+\end{itemize}
+\end{frame}
+
+\end{document}
